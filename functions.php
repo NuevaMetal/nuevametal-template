@@ -12,6 +12,7 @@ require_once 'vendor/autoload.php';
 use Libs\Actions;
 use Libs\Filters;
 use Libs\Widgets;
+use Knob\Libs\Utils;
 
 // --------------------------------------------------------------
 // Some constants
@@ -26,7 +27,7 @@ define('APP_DIR', PROJECT_DIR . '/app');
 define('PAGES_DIR', APP_DIR . '/pages');
 define('CONFIG_DIR', APP_DIR . '/config');
 
-$configFile = require CONFIG_DIR . '/config.php';
+$configFile = Utils::getConfigFile();
 
 $env = isset($configFile['env']) ? $configFile['env'] : [];
 $siteUrl = get_site_url();
